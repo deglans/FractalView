@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Copyright (c) 2016 Deglans Dalpasso.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+   Deglans Dalpasso - initial API and implementation and initial documentation
+-->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import deglans.fractalview.GUI.*?>
+
+<fx:root prefHeight="600.0" prefWidth="900.0" type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <CartesianCanvasGUI fx:id="canvas" height="600.0" width="600.0" BorderPane.alignment="CENTER" />
+   </center>
+   <left>
+      <VBox prefHeight="600.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="300.0">
+               <children>
+                  <Label text="Fractal type:" />
+                  <ComboBox fx:id="cbFractalType" prefWidth="180.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="300.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleStartRenderingOnAction" text="Start rendering" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleStopRenderingOnAction" text="Stop rendering" />
+               </children>
+            </HBox>
+            <ProgressBar fx:id="pbRendering" prefWidth="200.0" progress="0.0" />
+            <TabPane prefHeight="400.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                  <Tab text="Common">
+                     <content>
+                        <VBox prefHeight="400.0" prefWidth="300.0">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="300.0">
+                                 <children>
+                                    <Label text="Numer of frames:" />
+                                    <TextField fx:id="tfTotalFrames" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="50.0" prefWidth="300.0">
+                                 <children>
+                                    <Label text="Max iterations:" />
+                                    <TextField fx:id="tfMaxIterations" />
+                                 </children>
+                              </HBox>
+                              <ColorPaletteGUI fx:id="colorPaletteGUI" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                <Tab text="Start">
+                     <content>
+                        <VBox prefHeight="300.0" prefWidth="300.0">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="300.0">
+                                 <children>
+                                    <Label text="Up Left:" />
+                                    <TextField fx:id="tfUpLeftStart" />
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="300.0">
+                                 <children>
+                                    <Label text="Down Right:" />
+                                    <TextField fx:id="tfDownRightStart" />
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="60.0" prefHeight="50.0" prefWidth="300.0">
+                                 <children>
+                                    <Label text="Power:" />
+                                    <TextField fx:id="tfPowerStart" />
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="110.0" prefHeight="50.0" prefWidth="300.0">
+                                 <children>
+                                    <Label text="Constant:" />
+                                    <TextField fx:id="tfConstantStart" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="50.0" prefWidth="300.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#handleStartPreviewAtStartOnAction" text="Start preview" />
+                                    <Button mnemonicParsing="false" onAction="#handleStopPreviewAtStartOnAction" text="Stop preview" />
+                                 </children>
+                              </HBox>
+                              <ProgressBar fx:id="pbPreviewStart" prefWidth="200.0" progress="0.0" />
+                           </children>
+                        </VBox>
+                     </content>
+                </Tab>
+                  <Tab text="End">
+                     <content>
+                        <VBox prefHeight="300.0" prefWidth="300.0">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="300.0">
+                                 <children>
+                                    <Label text="Up Left:" />
+                                    <TextField fx:id="tfUpLeftEnd" />
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="300.0">
+                                 <children>
+                                    <Label text="Down Right:" />
+                                    <TextField fx:id="tfDownRightEnd" />
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="60.0" prefHeight="50.0" prefWidth="300.0">
+                                 <children>
+                                    <Label text="Power:" />
+                                    <TextField fx:id="tfPowerEnd" />
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="110.0" prefHeight="50.0" prefWidth="300.0">
+                                 <children>
+                                    <Label text="Constant:" />
+                                    <TextField fx:id="tfConstantEnd" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="50.0" prefWidth="300.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#handleStartPreviewAtEndOnAction" text="Start preview" />
+                                    <Button mnemonicParsing="false" onAction="#handleStopPreviewAtEndOnAction" text="Stop preview" />
+                                 </children>
+                              </HBox>
+                              <ProgressBar fx:id="pbPreviewEnd" prefWidth="200.0" progress="0.0" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+   </left>
+</fx:root>

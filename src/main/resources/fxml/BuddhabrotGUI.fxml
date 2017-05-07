@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Copyright (c) 2016 Deglans Dalpasso.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+   Deglans Dalpasso - initial API and implementation and initial documentation
+-->
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import deglans.fractalview.GUI.*?>
+
+<fx:root prefHeight="600.0" prefWidth="900.0" type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox prefHeight="600.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="300.0">
+               <children>
+                  <Label text="Max iterations:" />
+                  <TextField fx:id="tfMaxIterations" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="300.0">
+               <children>
+                  <Label text="Power:" />
+                  <TextField fx:id="tfPower" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="60.0" prefHeight="50.0" prefWidth="300.0">
+               <children>
+                  <Label text="Color zero:" />
+                  <TextField fx:id="tfColorZero" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="110.0" prefHeight="50.0" prefWidth="300.0">
+               <children>
+                  <Label text="Color max:" />
+                  <TextField fx:id="tfColorMax" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="160.0" prefHeight="50.0" prefWidth="300.0">
+               <children>
+                  <Label text="Supersampling:" />
+                  <TextField fx:id="tfSupersampling" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="300.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleStartRenderingOnAction" text="Start rendering" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleStopRenderingOnAction" text="Stop rendering" />
+               </children>
+            </HBox>
+            <ProgressBar fx:id="pbRendering" prefWidth="200.0" progress="0.0" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <CartesianCanvasGUI fx:id="canvas" height="600.0" width="600.0" BorderPane.alignment="CENTER" />
+   </center>
+</fx:root>

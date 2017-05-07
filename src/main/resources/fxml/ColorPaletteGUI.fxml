@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Copyright (c) 2016 Deglans Dalpasso.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+   Deglans Dalpasso - initial API and implementation and initial documentation
+-->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root prefHeight="300.0" prefWidth="300.0" type="VBox"
+         xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <HBox prefHeight="50.0" prefWidth="300.0">
+         <children>
+            <Label text="Color Set:" />
+            <TextField fx:id="tfColorSet" />
+         </children>
+      </HBox>
+       <TableView fx:id="colorsTable" editable="true" prefHeight="250.0" prefWidth="300.0">
+         <columns>
+           <TableColumn fx:id="colorColumn" prefWidth="149.0" sortable="false" text="Color" />
+           <TableColumn fx:id="stopColumn" prefWidth="149.0" sortable="false" text="Stop" />
+         </columns>
+       </TableView>
+       <HBox prefHeight="50.0" prefWidth="300.0">
+          <children>
+             <TextField fx:id="tfColor" prefWidth="80.0" promptText="Color" />
+             <TextField fx:id="tfStop" prefWidth="80.0" promptText="Stop" />
+             <Button mnemonicParsing="false" onAction="#handleAddOnAction" text="Add" />
+          </children>
+       </HBox>
+    </children>
+</fx:root>
